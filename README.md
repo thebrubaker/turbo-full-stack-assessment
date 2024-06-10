@@ -1,4 +1,4 @@
-# React Three Fiber + TypeScript + Vite
+# Turbo Full Stack Assessment
 
 This template provides a minimal setup for a Turbo Full Stack project. It
 includes the following packages:
