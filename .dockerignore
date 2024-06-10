@@ -1,0 +1,33 @@
+# dependencies
+**/node_modules
+**/.pnp
+**/.pnp.js
+
+# testing
+**/coverage
+
+**/out/
+**/build/
+**/dist/
+
+# misc
+**/.DS_Store
+**/*.pem
+
+# debug
+**/*.log*
+
+# local env files
+**/.env
+
+# turbo
+**/.turbo
+**/.prisma
+
+**/.git
+**/.github
+**/.vscode
+**/.next
+
+**/Dockerfile
+**/serviceAccount.json
