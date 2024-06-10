@@ -30,9 +30,9 @@ implementing new features.
 
 2. **Repository Setup:**
    - Please clone the repository from GitHub:
-     `git clone https://github.com/thebrubaker/turbo-fullstack-assessment.git`
+     `git clone https://github.com/thebrubaker/turbo-full-stack-assessment.git`
    - Navigate into the project directory:
-     `cd turbo-fullstack-assessment`
+     `cd turbo-full-stack-assessment`
    - Install the necessary dependencies:
      `npm install`
    - Start the application to ensure everything is set up correctly:
