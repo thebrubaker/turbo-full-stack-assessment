@@ -14,7 +14,7 @@
     "@project/eslint-config": "*",
     "prettier": "^3.2.5",
     "prisma": "^5.12.1",
-    "turbo": "^1.13.2"
+    "turbo": "^2.0.4"
   },
   "engines": {
     "node": ">=14.0.0",
