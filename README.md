@@ -12,7 +12,25 @@ includes the following packages:
 - ESLint
 - Docker Compose (Postgres, Redis)
 
-This repository assumes you have Node v20+ installed.
+This repository assumes you have Node v20+ installed. You can run the following
+commands to start the project:
+
+```bash
+# Start Postgres and Redis
+docker-compose up -d
+
+# Install dependencies
+npm install
+
+# Copy .env.example to .env
+cp .env.example .env
+
+# prisma generate and migrate
+npx prisma generate && npx prisma migrate dev
+
+# Start the mono-repo apps
+npm run dev
+```
 
 ## Tech Assessment Instructions
 
