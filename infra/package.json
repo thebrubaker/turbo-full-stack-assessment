@@ -1,0 +1,15 @@
+{
+  "name": "turbo-infra",
+  "description": "A Pulumi project that deploys services to Google Cloud Platform (GCP).",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "dependencies": {
+    "@pulumi/docker": "4.4.3",
+    "@pulumi/gcp": "7.8.0",
+    "@pulumi/pulumi": "*",
+    "@pulumi/random": "^4.16.3"
+  }
+}

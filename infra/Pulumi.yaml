@@ -1,0 +1,7 @@
+name: turbo
+runtime:
+  name: nodejs
+  options:
+    packagemanager: npm
+description: A TypeScript program to deploy services to Google Cloud Platform
+main: ./src/index.ts

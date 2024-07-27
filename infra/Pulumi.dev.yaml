@@ -1,0 +1,21 @@
+config:
+  gcp:project: replace-with-your-project-id
+  gcp:region: us-central1
+
+  api:imageName: api
+  api:concurrency: '50'
+  api:containerPort: '80'
+  api:cpu: '1'
+  api:memory: 1Gi
+
+  web:imageName: web
+  web:concurrency: '50'
+  web:containerPort: '3000'
+  web:cpu: '1'
+  web:memory: 1Gi
+
+  postgres:databaseName: postgres
+  postgres:databaseUser: postgres
+  postgres:databasePassword: postgres
+
+  redis:password: redis
