@@ -3,9 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "postinstall": "npm run env:copy && npm run env:validate && prisma generate && prisma migrate dev && next telemetry disable",
+    "env:copy": "find . -name \".env.example\" -exec sh -c 'test -f \"${1%.*}\" || cp \"$1\" \"${1%.*}\"' _ {} \\;",
+    "env:validate": "find . -name \".env\" -exec sh -c 'grep -q -E \"^[A-Z_]+=$\" \"$1\" && echo File has missing values: \"$1\"' _ {} \\;",
     "build": "turbo run build",
     "clean": "turbo run clean",
-    "dev": "turbo run dev",
+    "dev": "docker compose up -d && turbo run dev",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "test": "turbo run test"
@@ -13,7 +16,7 @@
   "devDependencies": {
     "@project/eslint-config": "*",
     "prettier": "^3.2.5",
-    "prisma": "^5.12.1",
+    "prisma": "^5.17.0",
     "turbo": "^2.0.4"
   },
   "engines": {
@@ -26,6 +29,6 @@
     "packages/*"
   ],
   "dependencies": {
-    "@prisma/client": "^5.12.1"
+    "@prisma/client": "^5.17.0"
   }
 }
