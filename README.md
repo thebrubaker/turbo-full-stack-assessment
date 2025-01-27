@@ -1,7 +1,7 @@
 # Turbo Full Stack Assessment
 
 This template provides a minimal setup for a Turbo Full Stack project. It
-includes the following packages:
+includes the following packages (explain which you are unfamiliar with):
 
 - TypeScript
 - Nest.js
@@ -11,26 +11,6 @@ includes the following packages:
 - Shadcn Components
 - ESLint
 - Docker Compose (Postgres, Redis)
-
-This repository assumes you have Node v20+ installed. You can run the following
-commands to start the project:
-
-```bash
-# Start Postgres and Redis
-docker-compose up -d
-
-# Install dependencies
-npm install
-
-# Copy .env.example to .env
-cp .env.example .env
-
-# prisma generate and migrate
-npx prisma generate && npx prisma migrate dev
-
-# Start the mono-repo apps
-npm run dev
-```
 
 ## Tech Assessment Instructions
 
@@ -51,10 +31,16 @@ implementing new features.
      `git clone https://github.com/thebrubaker/turbo-full-stack-assessment.git`
    - Navigate into the project directory:
      `cd turbo-full-stack-assessment`
-   - Install the necessary dependencies:
+   - Copy the example environment file:
+     `cp .env.example .env`
+   - Start Postgres and Redis:
+     `docker-compose up -d`
+   - Install dependencies:
      `npm install`
-   - Start the application to ensure everything is set up correctly:
-     `npm start`
+   - Generate Prisma client and run migrations:
+     `npx prisma generate && npx prisma migrate dev`
+   - Start the mono-repo apps:
+     `npx turbo dev`
 
 3. **During the Assessment:**
    - You are free to use any tools or online resources, including Google and AI assistance, to aid in your coding during the assessment.
@@ -70,6 +56,42 @@ implementing new features.
 5. **Interview Etiquette:**
    - Feel free to ask clarifying questions at any time.
    - Discuss your thought process openly as you work through the tasks. This discussion is as important as the final code.
+
+## Repository Overview
+
+The repository is set up with the following key files:
+
+### Database Schema (`prisma/schema.prisma`)
+
+Defines a User model with fields:
+
+- `id`: Auto-incrementing primary key
+- `email`: Unique string
+- `firstName`: String
+- `lastName`: String
+- `password`: String
+
+The schema uses PostgreSQL as the database provider, configured via environment variables.
+
+### Frontend Sign Up Page (`apps/web/src/app/page.tsx`)
+
+Contains a React component rendering a sign-up form with:
+
+- First name and last name inputs
+- Email input
+- Password input
+- Submit button
+The form uses Shadcn UI components for consistent styling.
+
+### API Users Controller (`apps/api/src/users/users.controller.ts`)
+
+A NestJS controller that:
+
+- Uses Prisma service for database operations
+- Currently implements a GET endpoint to fetch users by ID
+- Returns user data from the database
+
+The repository follows a monorepo structure using Turborepo, with separate apps for the frontend (Next.js) and backend (NestJS), sharing a common database layer through Prisma.
 
 ## End of Assessment
 

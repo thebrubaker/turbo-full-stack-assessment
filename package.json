@@ -3,9 +3,6 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "postinstall": "npm run env:copy && npm run env:validate && prisma generate && prisma migrate dev && next telemetry disable",
-    "env:copy": "find . -name \".env.example\" -exec sh -c 'test -f \"${1%.*}\" || cp \"$1\" \"${1%.*}\"' _ {} \\;",
-    "env:validate": "find . -name \".env\" -exec sh -c 'grep -q -E \"^[A-Z_]+=$\" \"$1\" && echo File has missing values: \"$1\"' _ {} \\;",
     "build": "turbo run build",
     "clean": "turbo run clean",
     "dev": "docker compose up -d && turbo run dev",
